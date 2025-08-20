@@ -1,0 +1,202 @@
+<style>
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Times New Roman', Times, serif;
+    scroll-behavior: smooth;
+    background-color: white;
+    color: black;
+    font-size: 22px; /* base size for scaling */
+}
+
+section {
+    height: 100vh;
+    text-align: center;
+}
+
+/* Welcome Section */
+.welcome {
+    background: url("{{ url_for('static', filename='uploads/welcome.jpeg') }}") no-repeat center center;
+    background-size: 95%;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 100px;
+}
+
+/* About Section Split Layout */
+.about {
+    display: flex;
+    margin: 0;
+    padding: 30px;
+}
+
+.about-left {
+    flex: 1;
+    background: url("{{ url_for('static', filename='uploads/aboutleft.jpg') }}") no-repeat center center/cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 40px;
+}
+
+.about-right {
+    flex: 1;
+    background: url("{{ url_for('static', filename='uploads/aboutright.jpg') }}") no-repeat center center/cover;
+    background-size: 100%;
+    background-color: white;
+    margin: 0;
+}
+
+.about-left .content {
+    padding: 40px;
+    text-align: center;
+}
+
+/* Features Section */
+.features {
+    background-color: white;
+    padding: 80px 20px;
+    text-align: center;
+    height: auto;
+}
+
+.features h1 {
+    font-size: 2.5rem; /* Uniform heading size */
+    font-weight: bold;
+    margin-bottom: 0.5em;
+}
+
+.features-desc {
+    max-width: 700px;
+    margin: 0 auto 50px;
+    font-size: 1.2rem; /* uniform paragraph size */
+    color: #000;
+    line-height: 1.6;
+}
+
+.features-container {
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+    flex-wrap: wrap;
+}
+
+.feature-box {
+    text-align: center;
+    max-width: 200px;
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.feature-number {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.feature-icon {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 15px;
+}
+
+.feature-box h3 {
+    font-size: 1rem;
+    font-weight: normal;
+    color: #222;
+}
+
+/* Headings */
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.2em;
+    font-weight: bold;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5em;
+}
+
+/* Paragraph text */
+p {
+    max-width: 800px;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin: 0.5em 0;
+}
+
+/* Button */
+.explore-btn {
+    margin-top: 1.5em;
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.explore-btn:hover {
+    background-color: rgb(13, 4, 4);
+}
+
+
+</style>
+
+<body>
+<!-- Welcome Section -->
+<section class="welcome" id="welcome">
+    <h1>Welcome to Yakshavarnika</h1>
+    <p>Yakshavarnika is a web project dedicated to Yakshagana character identification, featuring a dynamic background with beautiful Yakshagana art.</p>
+    <a href="{{ url_for('upload') }}" class="explore-btn">Explore More</a>
+</section>
+
+<!-- About Section -->
+<section class="about" id="about">
+    <div class="about-left">
+        <div class="content">
+            <h1>About Yakshavarnika</h1>
+            <p>This section describes the purpose, vision, and uniqueness of the Yakshavarnika project.</p>
+            
+
+        </div>
+    </div>
+    <div class="about-right"></div>
+</section>
+
+<!-- Features Section -->
+ 
+ 
+<section class="features" id="features">
+    <h1>Key Features</h1>
+    
+    <p class="features-desc">Discover the unique features that make Yakshavarnika the ultimate destination for Yakshagana enthusiasts.</p>
+    <div class="features-container">
+        <div class="feature-box">
+            <div class="feature-number">01</div>
+            <img src="icon-character.png" alt="Character Icon" class="feature-icon">
+            <h3>Character</h3>
+        </div>
+        <div class="feature-box">
+            <div class="feature-number">02</div>
+            <img src="icon-gallery.png" alt="Art Gallery Icon" class="feature-icon">
+            <h3>Art Gallery</h3>
+        </div>
+        <div class="feature-box">
+            <div class="feature-number">03</div>
+            <img src="icon-learning.png" alt="Interactive Learning Icon" class="feature-icon">
+            <h3>Interactive Learning</h3>
+        </div>
+    </div>
+</section>
+</body>
